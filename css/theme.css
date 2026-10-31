@@ -1,0 +1,73 @@
+/* Ripcurrent theme — sunset point break: teal water, gold sun, dusk glass */
+:root {
+  --acc: #4ED8C8;
+  --acc2: #FFC46B;
+  --ink: #F3F7F5;
+  --dim: #9DB8B4;
+  --bg: #0A1B22;
+  --panel: rgba(8, 24, 30, .86);
+  --font: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* the menu title gets a two-tone sunset look */
+h1.title { color: #fff; }
+h1.title em {
+  background: linear-gradient(110deg, #4ED8C8, #9FE8D8 45%, #FFC46B);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* brand + logo pulse on the top bar */
+.topbar .brand { color: #4ED8C8; }
+
+/* menu floats over the live attract-mode session */
+[data-screen="menu"], [data-screen="pause"], [data-screen="results"] {
+  background: linear-gradient(180deg, rgba(10,27,34,.82), rgba(26,19,30,.70));
+  backdrop-filter: blur(3px);
+}
+
+/* HUD: score, hearts, speed, tube */
+#hud .score-chip b { font-size: 20px; color: #4ED8C8; letter-spacing: .02em; }
+#hud .hearts-chip .hearts { font-size: 15px; letter-spacing: .1em; }
+#hud .hearts-chip .hearts i { font-style: normal; color: #FFC46B; text-shadow: 0 0 8px rgba(255,196,107,.45); }
+#hud .hearts-chip .hearts i.off { color: rgba(243,247,245,.16); text-shadow: none; }
+#hud .speed-chip .meter { min-width: 86px; }
+#hud .tube-chip { border-color: rgba(78,216,200,.55); animation: tubePulse 1s ease-in-out infinite; }
+#hud .tube-chip b { color: #4ED8C8; font-size: 16px; }
+@keyframes tubePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(78,216,200,0); }
+  50% { box-shadow: 0 0 14px 2px rgba(78,216,200,.35); }
+}
+
+/* trick label center-pop */
+.trick-pop {
+  position: absolute; left: 50%; top: 32%;
+  transform: translate(-50%, -50%);
+  z-index: 30; pointer-events: none; text-align: center; opacity: 0;
+}
+.trick-pop b {
+  display: block;
+  font: 800 clamp(22px, 6vw, 44px)/1 var(--font);
+  letter-spacing: .06em; color: #fff;
+  text-shadow: 0 2px 0 rgba(6,26,32,.6), 0 0 22px rgba(78,216,200,.55);
+}
+.trick-pop span {
+  display: block; margin-top: 6px;
+  font: 700 clamp(12px, 2.6vw, 17px)/1 var(--font);
+  letter-spacing: .18em; color: #FFC46B; text-transform: uppercase;
+}
+.trick-pop.bad b { color: #FF7A66; text-shadow: 0 2px 0 rgba(6,26,32,.6), 0 0 22px rgba(255,122,102,.5); }
+.trick-pop.on { animation: trickPop 1.15s cubic-bezier(.2,1,.3,1) forwards; }
+@keyframes trickPop {
+  0% { opacity: 0; transform: translate(-50%,-50%) scale(.55); }
+  12% { opacity: 1; transform: translate(-50%,-50%) scale(1.12); }
+  24% { transform: translate(-50%,-50%) scale(1); }
+  72% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%,-64%) scale(1); }
+}
+body.rm .trick-pop.on { animation: trickPopRM 1.4s ease forwards; }
+@keyframes trickPopRM { 0% { opacity: 0; } 12% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .trick-pop.on { animation: trickPopRM 1.4s ease forwards; }
+}
