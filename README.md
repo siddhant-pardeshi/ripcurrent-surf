@@ -14,7 +14,7 @@ Three hearts. Sets get steeper and faster as the light fades. How long can you s
 
 ## Board briefings: Git survival moves
 
-Buoys drift in the swell carrying **Git commands**, and between sets Kai runs a **board briefing** — one concept card about the command you just carved past: what stash pop does that apply does not, why revert beats force-push on a shared branch, how reflog finds "lost" commits. Correct briefings pay +250, every card is tracked in the menu's **Concepts** codex, and the world pauses while you read.
+Buoys drift in the swell carrying **Git commands**, and between sets Kai runs a **board briefing** — one concept card about the command you just carved past: what stash pop does that apply does not, why revert beats force-push on a shared branch, how reflog finds "lost" commits. Correct briefings pay +250 **and restore a heart** (max three); a missed briefing costs one — zero hearts ends the session. Every card is tracked in the menu's **Concepts** codex, and the world pauses while you read.
 
 ## Controls
 

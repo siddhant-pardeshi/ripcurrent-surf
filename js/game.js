@@ -309,7 +309,20 @@
             briefingOpen = false;
             G.resume();
             calmT = 1.4;
-          } }).then(ok => { if (ok) { score += 250; Kit.toast('+250 — board briefing aced'); } });
+          } }).then(ok => {
+            if (ok) {
+              score += 250;
+              if (hearts < 3) { hearts++; Kit.toast('+1 heart — board briefing aced'); }
+              else Kit.toast('+250 — board briefing aced');
+              Audio.sfx('coin');
+            } else {
+              hearts--;
+              Audio.sfx('fail');
+              G.shake(6);
+              Kit.toast('Missed briefing — a heart went with the set');
+              if (hearts <= 0) { finishRun(); return; }
+            }
+          });
         }
         return;
       }
