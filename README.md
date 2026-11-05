@@ -37,6 +37,10 @@ The character in the corner is Kai — towel-side commentary all session. They h
 
 Volume sliders and mute (`M`), quality tiers, reduced motion, hideable mascot, fullscreen, keyboard-playable menus, touch targets ≥ 44px. Fully playable muted — the ocean shows you everything it says.
 
+## Privacy
+
+No accounts, no cookies, no analytics, no tracking — nothing leaves your device. Progress and settings live in your browser's localStorage and can be wiped anytime from Settings. Full details: [SECURITY.md](SECURITY.md) and the deck-wide [privacy statement](https://github.com/siddhant-pardeshi/game-deck/blob/main/PRIVACY.md).
+
 ## Under the hood
 
 One shared game kit, zero downloaded assets: the wave is a procedurally curled curve with layered water bands and foam particles; the surfer is drawn vector geometry with pose states; the soundtrack — an 84 BPM menu pad and a 96 BPM laid-back groove with off-grid hats — is synthesized live with WebAudio. Personal best lives in localStorage.
